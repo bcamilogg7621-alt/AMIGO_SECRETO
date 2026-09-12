@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Archivo confidencial - Operación Amigo Secreto">
+
+    <title>Operación: Amigo Secreto 🕵️</title>
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         EFECTOS DE FONDO
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="grid"></div>
+
+        <div class="scanline"></div>
+
+        <div class="particles" id="particles"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         INDICADOR SUPERIOR
+    ====================================================== -->
+
+    <header class="top-bar">
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SISTEMA ACTIVO
+        </div>
+
+        <div class="security-level">
+            NIVEL DE SEGURIDAD: <span>ULTRA</span>
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PANTALLA DE INTRODUCCIÓN
+    ====================================================== -->
+
+    <main id="introScreen" class="screen active">
+
+        <div class="classified-container">
+
+            <div class="classified-top">
+
+                <span>ARCHIVO CONFIDENCIAL</span>
+
+                <span>EXP. 2609</span>
+
+            </div>
+
+
+            <div class="lock-icon">
+
+                <div class="lock-body">
+                    🔒
+                </div>
+
+            </div>
+
+
+            <p class="system-text">
+                INICIANDO PROTOCOLO...
+            </p>
+
+
+            <h1 class="glitch-title"
+                data-text="OPERACIÓN">
+                OPERACIÓN
+            </h1>
+
+            <h2>
+                AMIGO SECRETO
+            </h2>
+
+
+            <div class="divider"></div>
+
+
+            <p class="intro-description">
+
+                Se ha detectado una actividad
+                sospechosa dentro de la familia.
+
+                <br><br>
+
+                Un evento secreto está a punto
+                de comenzar.
+
+            </p>
+
+
+            <div class="warning-box">
+
+                <span>⚠</span>
+
+                INFORMACIÓN CONFIDENCIAL
+
+                <span>⚠</span>
+
+            </div>
+
+
+            <button id="startBtn"
+                    class="main-button">
+
+                <span>🔓</span>
+
+                ACCEDER AL ARCHIVO
+
+                <span>→</span>
+
+            </button>
+
+
+            <p class="small-text">
+
+                SOLO PERSONAL AUTORIZADO
+
+            </p>
+
+        </div>
+
+    </main>
+
+<!-- =========================================================
+     TRANSICIÓN DE ACCESO
+========================================================= -->
+
+<div id="accessTransition" class="access-transition hidden">
+
+    <div class="access-terminal">
+
+        <div class="access-header">
+            <span>SECURE SYSTEM</span>
+            <span>EXP. 2609</span>
+        </div>
+
+        <div class="access-icon">🔐</div>
+
+        <div class="access-title">
+            AUTORIZANDO ACCESO
+        </div>
+
+        <div id="accessStatus" class="access-status">
+            INICIANDO PROTOCOLO...
+        </div>
+
+        <div class="access-progress">
+            <div id="accessProgressBar"></div>
+        </div>
+
+        <div id="accessPercentage" class="access-percentage">
+            0%
+        </div>
+
+        <div id="accessLogs" class="access-logs">
+            <div>> Inicializando sistema...</div>
+        </div>
+
+    </div>
+
+</div>
+    <!-- =====================================================
+         PANTALLA DE SEGURIDAD
+    ====================================================== -->
+
+    <section id="securityScreen"
+             class="screen hidden">
+
+    <div class="security-container">
+
+        <!-- CABECERA -->
+        <div class="security-header">
+
+            <div class="security-status">
+                <span class="security-dot"></span>
+                SISTEMA SEGURO
+            </div>
+
+            <div class="security-code">
+                SEC-2609
+            </div>
+
+        </div>
+
+
+        <!-- ICONO -->
+        <div class="security-icon">
+            🕵️
+        </div>
+
+
+        <!-- TITULO -->
+        <div class="security-title-small">
+            SISTEMA DE SEGURIDAD
+        </div>
+
+        <h2>
+            VERIFICACIÓN
+            <span>REQUERIDA</span>
+        </h2>
+
+
+        <p class="security-description">
+            Se ha detectado una transmisión clasificada.
+            Para continuar, debes confirmar que estás
+            preparado para mantener esta información
+            en absoluto secreto.
+        </p>
+
+
+        <!-- TERMINAL -->
+        <div class="security-terminal">
+
+            <div class="terminal-top">
+
+                <span>
+                    SECURE_TERMINAL
+                </span>
+
+                <span>
+                    ONLINE ●
+                </span>
+
+            </div>
+
+
+            <div id="securityLogs" class="security-logs">
+
+                <div class="terminal-line">
+                    <span>[SYS]</span>
+                    Conexión establecida...
+                </div>
+
+                <div class="terminal-line">
+                    <span>[AUTH]</span>
+                    Identificando usuario...
+                </div>
+
+                <div class="terminal-line">
+                    <span>[SCAN]</span>
+                    Familia detectada ✓
+                </div>
+
+                <div class="terminal-line">
+                    <span>[SEC]</span>
+                    Protocolo de confidencialidad activo...
+                </div>
+
+                <div class="terminal-line">
+                    <span>[WARN]</span>
+                    Información clasificada detectada.
+                </div>
+
+                <div class="terminal-line">
+                    <span>[WAIT]</span>
+                    Esperando confirmación...
+                </div>
+
+            </div>
+
+
+            <div class="terminal-cursor">
+                >
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- ADVERTENCIA -->
+        <div class="security-warning">
+
+            <div class="warning-icon">
+                ⚠
+            </div>
+
+            <div>
+                <strong>
+                    INFORMACIÓN CONFIDENCIAL
+                </strong>
+
+                <p>
+                    Lo que se descubra dentro de este
+                    archivo debe permanecer en secreto.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN -->
+        <button id="acceptSecret" class="secret-access-btn">
+
+            <span class="btn-icon">
+                🤫
+            </span>
+
+            <span class="btn-text">
+                ACEPTAR EL SECRETO
+            </span>
+
+            <span class="btn-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <div class="security-footer-text">
+            AUTORIZACIÓN MANUAL REQUERIDA
+        </div>
+
+    </div>
+
+
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
+
+    <section id="mainContent"
+             class="hidden">
+
+
+        <!-- ===============================================
+             HERO
+        ================================================ -->
+
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <p class="classified-label">
+
+                    █ ARCHIVO DESCLASIFICADO █
+
+                </p>
+
+
+                <h1>
+
+                    MISIÓN
+                    <span>ACTIVA</span>
+
+                </h1>
+
+
+                <p class="hero-subtitle">
+
+                    Has desbloqueado la información
+                    del <strong>Amigo Secreto</strong>.
+
+                </p>
+
+
+                <div class="mission-badge">
+
+                    🎁 MISIÓN #2609
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             MENSAJE
+        ================================================ -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+
+                    <p>TRANSMISIÓN ENTRANTE</p>
+
+                    <h2>
+                        TENEMOS UNA MISIÓN
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="message-card">
+
+                <div class="card-corner top-left"></div>
+                <div class="card-corner top-right"></div>
+                <div class="card-corner bottom-left"></div>
+                <div class="card-corner bottom-right"></div>
+
+
+                <span class="message-icon">
+                    📡
+                </span>
+
+
+                <p>
+
+                    Se ha autorizado una reunión
+                    secreta entre los miembros de
+                    la familia.
+
+                </p>
+
+
+                <p>
+
+                    El objetivo es simple:
+
+                </p>
+
+
+                <strong class="big-message">
+
+                    DAR UN REGALO...
+                    <br>
+                    SIN SER DESCUBIERTO.
+
+                </strong>
+
+
+                <p>
+
+                    Mantén los ojos abiertos.
+                    👀
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+       <section class="content-section event-section">
+
+    <div class="section-header">
+
+        <span class="section-number">
+            02
+        </span>
+
+        <div>
+
+            <p>ARCHIVOS CLASIFICADOS</p>
+
+            <h2>
+                DATOS DE LA OPERACIÓN
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <p class="unlock-instruction">
+        🔐 Algunos archivos requieren autorización.
+        Haz clic sobre ellos para desbloquearlos.
+    </p>
+
+
+    <div class="event-grid">
+
+
+        <!-- =========================================
+             FECHA
+        ========================================== -->
+
+        <div class="event-card locked-file"
+             data-file="date">
+
+            <div class="event-card-top">
+
+                <span>
+                    ARCHIVO #01
+                </span>
+
+                <span class="file-status">
+                    🔒
+                </span>
+
+            </div>
+
+
+            <div class="event-icon">
+                📅
+            </div>
+
+
+            <p>
+                FECHA
+            </p>
+
+
+            <div class="locked-content">
+
+                <h3>
+                    █████████████
+                </h3>
+
+                <button class="unlock-btn">
+                    🔓 DESBLOQUEAR
+                </button>
+
+            </div>
+
+
+            <div class="revealed-content">
+
+                <h3>
+                    26 DE SEPTIEMBRE
+                </h3>
+
+                <span class="classified-status">
+                    ✓ INFORMACIÓN CONFIRMADA
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             HORA
+        ========================================== -->
+
+        <div class="event-card locked-file"
+             data-file="time">
+
+            <div class="event-card-top">
+
+                <span>
+                    ARCHIVO #02
+                </span>
+
+                <span class="file-status">
+                    🔒
+                </span>
+
+            </div>
+
+
+            <div class="event-icon">
+                ⏰
+            </div>
+
+
+            <p>
+                HORA
+            </p>
+
+
+            <div class="locked-content">
+
+                <h3>
+                    █████████
+                </h3>
+
+                <button class="unlock-btn">
+                    🔓 DESBLOQUEAR
+                </button>
+
+            </div>
+
+
+            <div class="revealed-content">
+
+                <h3>
+                    7:00 PM
+                </h3>
+
+                <span class="classified-status">
+                    ✓ INFORMACIÓN CONFIRMADA
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             UBICACIÓN
+        ========================================== -->
+
+        <div class="event-card locked-file location-file"
+             data-file="location">
+
+            <div class="event-card-top">
+
+                <span>
+                    ARCHIVO #03
+                </span>
+
+                <span class="file-status">
+                    🔒
+                </span>
+
+            </div>
+
+
+            <div class="event-icon">
+                📍
+            </div>
+
+
+            <p>
+                UBICACIÓN
+            </p>
+
+
+            <div class="locked-content">
+
+                <h3>
+                    CLASIFICADO
+                </h3>
+
+                <button class="unlock-btn">
+                    🔐 INTENTAR ACCESO
+                </button>
+
+            </div>
+
+
+          <div class="revealed-content">
+
+    <h3>
+        CL. 59A SUR #42
+    </h3>
+
+    <P>SALÓN COMUNAL</P>
+    <P>ARBORIZADORA BAJA</P>
+
+    <span class="classified-status">
+        ✓ UBICACIÓN CONFIRMADA
+    </span>
+
+    <a
+        href="https://www.google.com/maps/search/?api=1&query=Cl.%2059a%20Sur%20%2342%2C%20Bogot%C3%A1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="map-button"
+    >
+        📍 ABRIR UBICACIÓN
+    </a>
+
+</div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             PRESUPUESTO
+        ========================================== -->
+
+        <div class="event-card locked-file"
+             data-file="budget">
+
+            <div class="event-card-top">
+
+                <span>
+                    ARCHIVO #04
+                </span>
+
+                <span class="file-status">
+                    🔒
+                </span>
+
+            </div>
+
+
+            <div class="event-icon">
+                💰
+            </div>
+
+
+            <p>
+                PRESUPUESTO
+            </p>
+
+
+            <div class="locked-content">
+
+                <h3>
+                    $ ██████
+                </h3>
+
+                <button class="unlock-btn">
+                    🔓 DESBLOQUEAR
+                </button>
+
+            </div>
+
+
+            <div class="revealed-content">
+
+                <h3>
+                    $50K — $60K
+                </h3>
+
+                <span class="classified-status">
+                    ✓ INFORMACIÓN CONFIRMADA
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- CONTADOR DE ARCHIVOS -->
+
+    <div class="files-progress">
+
+        <div class="progress-info">
+
+            <span>
+                ARCHIVOS DESBLOQUEADOS
+            </span>
+
+            <span id="filesCount">
+                0 / 4
+            </span>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div id="progressFill"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- ===============================================
+             CUENTA REGRESIVA
+        ================================================ -->
+
+        <section class="countdown-section">
+
+            <div class="countdown-content">
+
+                <p class="classified-label">
+
+                    ⏳ TEMPORIZADOR DE LA OPERACIÓN
+
+                </p>
+
+
+                <h2>
+
+                    TIEMPO RESTANTE
+
+                </h2>
+
+
+                <p>
+
+                    Hasta el comienzo de la misión.
+
+                </p>
+
+
+                <div id="countdown"
+                     class="countdown">
+
+
+                    <div class="time-box">
+
+                        <span id="days">
+                            00
+                        </span>
+
+                        <small>
+                            DÍAS
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-separator">
+                        :
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="hours">
+                            00
+                        </span>
+
+                        <small>
+                            HORAS
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-separator">
+                        :
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="minutes">
+                            00
+                        </span>
+
+                        <small>
+                            MINUTOS
+                        </small>
+
+                    </div>
+
+
+                    <div class="time-separator">
+                        :
+                    </div>
+
+
+                    <div class="time-box">
+
+                        <span id="seconds">
+                            00
+                        </span>
+
+                        <small>
+                            SEGUNDOS
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             REGLAS
+        ================================================ -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <p>
+                        PROTOCOLO
+                    </p>
+
+                    <h2>
+                        REGLAS DEL JUEGO
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="rules-container">
+
+
+                <div class="rule">
+
+                    <span class="rule-number">
+                        001
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            🤫 MANTÉN EL SECRETO
+                        </h3>
+
+                        <p>
+
+                            No reveles a quién te tocó.
+                            La identidad de tu persona
+                            asignada es información
+                            confidencial.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <span class="rule-number">
+                        002
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            🎁 RESPETA EL PRESUPUESTO
+                        </h3>
+
+                        <p>
+
+                            El regalo debe estar dentro
+                            del presupuesto establecido:
+                            $50.000 — $60.000.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <span class="rule-number">
+                        003
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            🕵️ NADA DE SOPLONES
+                        </h3>
+
+                        <p>
+
+                            No intentes descubrir quién
+                            le tocó a los demás.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rule">
+
+                    <span class="rule-number">
+                        004
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            ❤️ LO IMPORTANTE ES EL DETALLE
+                        </h3>
+
+                        <p>
+
+                            No se trata solamente del
+                            regalo. Se trata de compartir
+                            un momento especial en familia.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+<!-- =====================================================
+     EXPEDIENTE SECRETO
+====================================================== -->
+
+<section class="secret-file-section">
+
+    <div class="secret-file-container">
+
+        <div class="secret-stamp">
+            TOP SECRET
+        </div>
+
+
+        <div class="file-header">
+
+            <span>
+                EXPEDIENTE #007
+            </span>
+
+            <span>
+                CONFIDENCIAL
+            </span>
+
+        </div>
+
+
+        <div class="file-icon">
+            🗂️
+        </div>
+
+
+        <p class="classified-label">
+            INFORMACIÓN RECUPERADA
+        </p>
+
+
+        <h2>
+            HAY ALGO QUE<br>
+            TODAVÍA NO SABES...
+        </h2>
+
+
+        <p class="file-description">
+
+            Los investigadores han encontrado
+            información adicional relacionada con
+            la operación.
+
+            <br><br>
+
+            Pero el archivo está protegido.
+
+        </p>
+
+
+        <button id="openSecretFile"
+                class="main-button">
+
+            🔐 ABRIR EXPEDIENTE
+
+        </button>
+
+
+        <div id="secretFileContent"
+             class="secret-file-content hidden">
+
+            <div class="file-line"></div>
+
+            <p>
+                > ANALIZANDO ARCHIVO...
+            </p>
+
+            <p>
+                > VERIFICANDO AUTORIZACIÓN...
+            </p>
+
+            <p class="green-text">
+                > ACCESO CONCEDIDO ✓
+            </p>
+
+            <br>
+
+            <h3>
+                🎁 INFORMACIÓN IMPORTANTE
+            </h3>
+
+            <p>
+
+                El objetivo de esta operación no es
+                solamente intercambiar regalos.
+
+                <br><br>
+
+                Es reunir a la familia, pasar un buen
+                rato y crear un recuerdo que todos
+                puedan disfrutar.
+
+            </p>
+
+            <strong>
+
+                ❤️ LO IMPORTANTE ES COMPARTIR.
+
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- ===============================================
+             SOSPECHOSOS
+        ================================================ -->
+
+        <section class="content-section suspects-section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    04
+                </span>
+
+                <div>
+
+                    <p>
+                        INFORMACIÓN RESTRINGIDA
+                    </p>
+
+                    <h2>
+                        TODOS SON SOSPECHOSOS
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="suspect-message">
+
+                <div class="radar">
+
+                    <div class="radar-line"></div>
+
+                    <div class="radar-dot"></div>
+
+                </div>
+
+
+                <h3>
+                    ⚠️ ALERTA
+                </h3>
+
+
+                <p>
+
+                    Cualquier miembro de la familia
+                    podría estar involucrado.
+
+                </p>
+
+
+                <strong>
+
+                    CONFÍA EN NADIE. 👀
+
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             ACEPTAR MISIÓN
+        ================================================ -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <p class="classified-label">
+
+                    TRANSMISIÓN FINAL
+
+                </p>
+
+
+                <div class="final-icon">
+                    🎁
+                </div>
+
+
+                <h2>
+
+                    ¿ACEPTAS LA MISIÓN?
+
+                </h2>
+
+
+                <p>
+
+                    Has recibido toda la información
+                    necesaria.
+
+                    <br><br>
+
+                    Ahora depende de ti.
+
+                </p>
+
+
+                <button id="missionBtn"
+                        class="mission-button">
+
+                    <span>
+                        🔓
+                    </span>
+
+                    ACEPTAR MISIÓN
+
+                </button>
+
+
+                <div id="successMessage"
+                     class="success-message hidden">
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+
+                    <h3>
+                        MISIÓN ACEPTADA
+                    </h3>
+
+
+                    <p>
+
+                        El protocolo ha sido activado.
+
+                        <br><br>
+
+                        Nos vemos el
+                        <strong>
+                            26 DE SEPTIEMBRE
+                        </strong>
+
+                        <br>
+
+                        a las
+                        <strong>
+                            7:00 PM
+                        </strong>
+
+                    </p>
+
+
+                    <strong class="secret-final">
+
+                        🤫 Y RECUERDA...
+                        <br>
+                        NO LE CUENTES A NADIE.
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===============================================
+             FOOTER
+        ================================================ -->
+
+        <footer>
+
+            <p>
+                OPERACIÓN AMIGO SECRETO
+            </p>
+
+            <span>
+                ARCHIVO CONFIDENCIAL • 2026
+            </span>
+
+        </footer>
+
+
+    </section>
+
+       <!-- =====================================================
+         🎵 MÚSICA
+    ====================================================== -->
+
+    <audio id="audioPlayer" loop>
+        <source src="mision.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
